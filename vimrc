@@ -1,5 +1,5 @@
 set nocompatible
-set number
+set relativenumber
 set cursorline
 filetype off 
 syntax enable
