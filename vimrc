@@ -11,6 +11,10 @@ set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 
+" Match opening and closings on hitting %
+runtime macros/matchit.vim
+
+
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
@@ -47,6 +51,10 @@ nmap <Leader>df :Gdiff<cr>
 nmap <Leader>rt :Gwrite<cr>
 nmap <Leader>st :Gstatus<cr>
 
+" Rails.vim specific key bindings
+nmap <leader>ev :Sview<cr>
+nmap <leader>em :Smodel<cr>
+nmap <leader>ec :Scontroller<cr>
 
 " Navigate in between wrapped lines
 nmap k gk
@@ -55,7 +63,7 @@ nmap j gj
 " Typing vr opens vimrc
 nmap <leader>vr :vsp $MYVIMRC<cr>
 nmap <leader>vs :source ~/.vimrc<cr>
-imap <C-s> <esc>
+inoremap <C-a> <esc>
 
 
 " automatically rebalance windows on vim resize
