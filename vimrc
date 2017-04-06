@@ -43,6 +43,10 @@ nmap <leader>nt :NERDTreeToggle<cr>
 nmap <Leader>nf :NERDTreeFind<cr>
 nmap <leader>cn :cn<cr>
 
+" CtrlSF mappings                                                                     
+nmap <leader>io <Plug>CtrlSFPrompt                                                    
+vmap <C-F>f <Plug>CtrlSFVwordPath 
+
 " Search
 nmap <leader>y :only<cr>
 
@@ -84,6 +88,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'raimondi/delimitmate'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'dyng/ctrlsf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
