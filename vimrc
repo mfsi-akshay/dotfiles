@@ -44,7 +44,7 @@ nmap <Leader>nf :NERDTreeFind<cr>
 nmap <leader>cn :cn<cr>
 
 " CtrlSF mappings                                                                     
-nmap <leader>io <Plug>CtrlSFPrompt                                                    
+nmap <leader>io <Plug>CtrlSFPrompt
 vmap <C-F>f <Plug>CtrlSFVwordPath 
 
 " Search
