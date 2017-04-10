@@ -1,0 +1,5 @@
+# Additions to baschrc, when vim background changes in tmux not displaying cusorline
+#export TERM=xterm-256color
+export TERM=screen-256color
+
+stty -ixon
