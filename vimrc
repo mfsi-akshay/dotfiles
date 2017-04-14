@@ -5,6 +5,7 @@ filetype off
 syntax enable
 set background=dark
 set t_Co=16
+set laststatus=2
 
 " Indentation settings
 set expandtab
