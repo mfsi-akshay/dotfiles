@@ -1,11 +1,14 @@
 set nocompatible
 set relativenumber
 set cursorline
+set clipboard=unnamedplus
 filetype off 
 syntax enable
 set background=dark
 set t_Co=16
 set laststatus=2
+set foldmethod=syntax
+set foldlevel=20
 
 " Indentation settings
 set expandtab
@@ -68,6 +71,8 @@ nmap j gj
 " Typing vr opens vimrc
 nmap <leader>vr :vsp $MYVIMRC<cr>
 nmap <leader>vs :source ~/.vimrc<cr>
+
+" Ctrl-a escapes insert mode
 inoremap <C-a> <esc>
 
 
@@ -90,6 +95,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'raimondi/delimitmate'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
