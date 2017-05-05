@@ -1,5 +1,6 @@
 set nocompatible
 set relativenumber
+set ruler
 set cursorline
 set clipboard=unnamedplus
 filetype off 
