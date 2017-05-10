@@ -65,6 +65,13 @@ nmap <leader>ev :Sview<cr>
 nmap <leader>em :Smodel<cr>
 nmap <leader>ec :Scontroller<cr>
 
+" Leader mapings for VTR
+nmap <leader>vt :VtrAttachToPane
+nmap <leader>vf :VtrSendFile<cr>
+nmap <leader>vc :VtrSendCommandToRunner<cr>
+vmap <leader>r :VtrSendLinesToRunner<cr>
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+
 " Navigate in between wrapped lines
 nmap k gk
 nmap j gj 
@@ -97,6 +104,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'christoomey/vim-tmux-runner'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
