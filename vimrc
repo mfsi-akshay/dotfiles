@@ -5,7 +5,7 @@ set cursorline
 set clipboard=unnamedplus
 filetype off 
 syntax enable
-set background=dark
+set background=light
 set t_Co=16
 set laststatus=2
 set foldmethod=syntax
@@ -19,11 +19,16 @@ set autoindent
 " Match opening and closings on hitting %
 runtime macros/matchit.vim
 
+" Easy tab navigation, for rest, use macros
+nnoremap tn :tabprev <CR>
+nnoremap tm :tabnext <CR>
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_regexp = 1
+" This may not work for older vim installations
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -52,8 +57,10 @@ nmap <leader>cn :cn<cr>
 nmap <leader>io <Plug>CtrlSFPrompt
 vmap <C-F>f <Plug>CtrlSFVwordPath 
 
-" Search
 nmap <leader>y :only<cr>
+
+" Clear Search
+nmap <leader>cl :noh<cr>
 
 " vim-fugitive specific binds
 nmap <Leader>df :Gdiff<cr>
@@ -100,11 +107,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
 Plugin 'raimondi/delimitmate'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-tmux-runner'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'machakann/vim-highlightedyank'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
