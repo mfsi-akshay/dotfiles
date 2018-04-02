@@ -10,6 +10,7 @@ set t_Co=16
 set laststatus=2
 set foldmethod=syntax
 set foldlevel=20
+set noswapfile
 
 " Indentation settings
 set expandtab
@@ -19,9 +20,15 @@ set autoindent
 " Match opening and closings on hitting %
 runtime macros/matchit.vim
 
+nnoremap j gj
+nnoremap k gk
+
 " Easy tab navigation, for rest, use macros
 nnoremap tn :tabprev <CR>
 nnoremap tm :tabnext <CR>
+
+" Ambiguous tags
+nnoremap <C-]> g<C-]>
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
@@ -80,8 +87,8 @@ vmap <leader>r :VtrSendLinesToRunner<cr>
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
 
 " Navigate in between wrapped lines
-nmap k gk
-nmap j gj 
+"nmap k gk
+"nmap j gj 
 
 " Typing vr opens vimrc
 nmap <leader>vr :vsp $MYVIMRC<cr>
@@ -117,6 +124,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'machakann/vim-highlightedyank'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
